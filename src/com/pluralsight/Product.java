@@ -11,6 +11,7 @@ public class Product {
     public String getProductName() { return productName;}
     public double getPrice() { return price;}
     public String getDepartment() { return department;}
+
     // Setters
     public void setSku(String sku) { this.sku = sku;}
     public void setProductName(String productName) { this.productName = productName;}
