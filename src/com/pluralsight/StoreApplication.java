@@ -18,6 +18,37 @@ public class StoreApplication
     homeScreen();
     }
 
+    static void homeScreen()
+    {
+        while(true)
+        {
+            System.out.println();
+            System.out.println("Welcome to Scam = Null!");
+            System.out.println("---------------------------------");
+            System.out.println();
+            System.out.println("D) Display Products");
+            System.out.println("C) Cart");
+            System.out.println("E) Exit");
+            System.out.print("Make a selection: ");
+            String choice = scanner.nextLine().toUpperCase().strip();
+            System.out.println();
+
+            switch (choice)
+            {
+                case "D": // Display Products
+                    break;
+                case "C": // Cart
+                    break;
+                case "E": // Exit
+                    System.out.println("Cheapskate.");
+                    break;
+                default:
+                    System.out.println("-10 Intelligence");
+
+            }
+        }
+    }
+
     static ArrayList<Product> loadProducts() // Create 'loadProducts()' method. Creating separate methods for each task to be organized.
     {
         ArrayList<Product> inventory = new ArrayList<>(); // In the method, we create an array list called 'inventory'. A temporary vehicle to hold our .csv data
@@ -48,15 +79,11 @@ public class StoreApplication
 
     }
 
-
-
-
-
-
 }
 
         // DONE: Create Product class
         // DONE: Use .csv to load the store's inventory. Create loadProduct() method and use bufferedReader and array lists to extract the data to use for Product objects
-        // TODO: Create homeScreen() method
+        // DONE: Create homeScreen() method
+        // TODO: Route the homeScreen() selections to their corresponding methods
         // TODO: displayCart() method
 
