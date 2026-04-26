@@ -14,7 +14,7 @@ public class StoreApplication
 
     static void main(String[] args)
     {
-    products = loadProducts(); // calls 'loadProducts()' and stores the returned ArrayList in 'products'
+    products = loadProducts(); // calls 'loadProducts()' and stores the returned array list in 'products'. Look inside loadProducts() to see how the data is extracted into an array list
     homeScreen();
     }
 
@@ -35,7 +35,8 @@ public class StoreApplication
 
             switch (choice)
             {
-                case "D": // Display Products
+                case "D": // Display Products.
+                    displayProducts();
                     break;
                 case "C": // Cart
                     break;
@@ -44,10 +45,41 @@ public class StoreApplication
                     break;
                 default:
                     System.out.println("-10 Intelligence");
+                    break;
 
             }
         }
     }
+
+    static void displayProducts() // Use a for-each statement to loop through all the elements in an array
+    {                                               // for (type elementname : arrayName)
+        while(true)
+        {
+            for (Product product : products)
+            {
+            System.out.println(product.getProductName() + " $" + product.getPrice());
+
+            }
+
+            System.out.println();
+            System.out.println("S) Search/Filter");
+            System.out.println("A) Add to Cart");
+            System.out.println("B) Back");
+            System.out.print("What will it be: ");
+            String choice = scanner.nextLine().toUpperCase().strip();
+
+            switch(choice)
+            {
+                case "S":
+                    break;
+                case "A":
+                    break;
+                case "B":
+                    break;
+            }
+        }
+    }
+
 
     static ArrayList<Product> loadProducts() // Create 'loadProducts()' method. Creating separate methods for each task to be organized.
     {
@@ -79,11 +111,12 @@ public class StoreApplication
 
     }
 
-}
+}       // NOTES: - displayCart() needs to display productName and price. We need to use getters and a loop. p
 
         // DONE: Create Product class
         // DONE: Use .csv to load the store's inventory. Create loadProduct() method and use bufferedReader and array lists to extract the data to use for Product objects
-        // DONE: Create homeScreen() method
-        // TODO: Route the homeScreen() selections to their corresponding methods
-        // TODO: displayCart() method
+        // DONE: Create homeScreen() method //
+        // TODO: Route selection "D" to displayProduct()
+        // TODO: Route selection "C" to displayCart()
+        // TODO: Create displayCart() method.
 
